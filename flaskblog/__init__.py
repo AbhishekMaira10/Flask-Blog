@@ -5,6 +5,7 @@ import sys
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt 
+from flask_login import LoginManager
 
 
 app = Flask(__name__)
@@ -14,7 +15,8 @@ app.config['SECRET_KEY'] = '6fa73538fe5688211055ed30dd556b17'
 # location of thr uri of the database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
-bcrypt = Bcrypt(app)    
+bcrypt = Bcrypt(app)   
+login_manager = LoginManager(app) 
 
 from flaskblog import routes
 
