@@ -1,7 +1,20 @@
 import inspect                                                              
 import pkgutil                                                                 
 import importlib                                                               
-import sys                                                                     
+import sys
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+
+app = Flask(__name__)
+# secret keys help protect the forms from modifying cookies, cross-site request forgery attack
+app.config['SECRET_KEY'] = '6fa73538fe5688211055ed30dd556b17'
+
+# location of thr uri of the database
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+db = SQLAlchemy(app)
+
+from flaskblog import routes
 
 
 def import_models():                                                           
