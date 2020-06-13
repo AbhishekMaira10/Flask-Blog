@@ -1,4 +1,3 @@
 {
-    "python.pythonPath": "C:\\ProgramData\\Anaconda3\\python.exe",
-    "python.linting.pylintArgs": ["--load-plugins", "pylint-flask"]
+  "python.pythonPath": "G:\\Machine Learning\\Django and Flask\\codes\\Environments\\django_env\\Scripts\\python.exe"
 }
